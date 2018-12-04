@@ -1,0 +1,32 @@
+1,/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2,brew install git
+
+https://guides.github.com/activities/hello-world/
+
+1、设置username和email（github每次commit都会记录他们）
+git config --global user.name "github Name"
+git config --global user.email "xxx@xx.com"
+
+2、通过终端命令创建ssh key
+ssh-keygen -t rsa -C "xxx@xx.com"
+
+Enter passphrase for key '/Users/zhouliuhuan/.ssh/id_rsa':   通用
+
+
+3,cat .ssh/id_rsa.pub
+登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图
+
+4、链接验证
+ssh -T git@github.com 
+终端输出 ： You've successfully authenticated, but GitHub does not provide shell access.
+
+获取远程服务器项目
+git@github.com:用户名/项目名称.git
+
+//文件添加到仓库（.代表提交所有文件）
+git add .
+//把文件提交到仓库
+git commit -m "First Commit"
+//上传到github
+git push
